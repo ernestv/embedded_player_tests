@@ -7,7 +7,7 @@ describe "WEBCLIENT" do
   include_context "firefox browser"
     describe "EMBEDDED PLAYER", :embedded do
       describe "- DEFAULT -" do
-      
+
       describe "IAB Rectangle Player" do
             it "logo" do
               browser.cookies.clear
@@ -15,8 +15,8 @@ describe "WEBCLIENT" do
               browser.div(:id, "content-types").radio(:value => 'default').set
               browser.iframe(:id, "iab-rectangle-player").div(:class, "icon-napster").when_present.click
               browser.windows.last.use
-#              expect(browser.url).to eq (RhapsodyUrl.get(:ho,'/'))
-              expect(browser.url).to eq ("https://app.lifestore-flat.at/login/?goto=/&redirect=1")
+              expect(browser.url).to eq (RhapsodyUrl.get(:ho,'/'))
+#              expect(browser.url).to eq ("https://app.lifestore-flat.at/login/?goto=/&redirect=1")
               browser.windows.last.close
             end
             it "sign in" do
@@ -28,7 +28,7 @@ describe "WEBCLIENT" do
               browser.cookies.clear
             end
             it "playback" do
-              sleep 2
+              sleep 3
               browser.iframe(:id, "iab-rectangle-player").div(:id, "player-controls").a(:id, "player-play").when_present.click
               browser.iframe(:id, "iab-rectangle-player").div(:id, "player-controls").a(:id, "player-pause").when_present.click
               browser.iframe(:id, "iab-rectangle-player").div(:id, "player-controls").a(:id, "player-previous").when_present.click

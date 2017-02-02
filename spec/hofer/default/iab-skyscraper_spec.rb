@@ -27,7 +27,7 @@ describe "WEBCLIENT" do
               browser.cookies.clear
             end
             it "playback" do
-              sleep 2
+              sleep 3
               browser.iframe(:id, "iab-skyscraper-player").div(:id, "player-controls").a(:id, "player-play").when_present.click
               browser.iframe(:id, "iab-skyscraper-player").div(:id, "player-controls").a(:id, "player-pause").when_present.click
               browser.iframe(:id, "iab-skyscraper-player").div(:id, "player-controls").a(:id, "player-previous").when_present.click

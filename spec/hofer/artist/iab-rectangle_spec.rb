@@ -15,8 +15,8 @@ describe "WEBCLIENT" do
               browser.div(:id, "content-types").radio(:value => 'artist').set
               browser.iframe(:id, "iab-rectangle-player").div(:class, "icon-napster").when_present.click
               browser.windows.last.use
-#              expect(browser.url).to eq (RhapsodyUrl.get(:ho,'/'))
-              expect(browser.url).to eq ("https://app.lifestore-flat.at/login/?goto=/&redirect=1")
+              expect(browser.url).to eq (RhapsodyUrl.get(:ho,'/'))
+#              expect(browser.url).to eq ("https://app.lifestore-flat.at/login/?goto=/&redirect=1")
               browser.windows.last.close
             end
             it "sign in" do
