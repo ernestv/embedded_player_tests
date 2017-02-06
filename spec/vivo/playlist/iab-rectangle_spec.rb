@@ -13,10 +13,10 @@ describe "WEBCLIENT" do
               browser.cookies.clear
               browser.goto RhapsodyUrl.get(:vivo, '/embedded-player/viewer.html')
               browser.div(:id, "content-types").radio(:value => 'album').set
-              browser.iframe(:id, "iab-rectangle-player").div(:playlist, "icon-napster").when_present.click
+              browser.iframe(:id, "iab-rectangle-player").div(:class, "icon-napster").when_present.click
               browser.windows.last.use
-              expect(browser.url).to eq (RhapsodyUrl.get(:vivo,'/'))
-#              expect(browser.url).to eq ("https://app-vivomusica.napster.com/login")
+#              expect(browser.url).to eq (RhapsodyUrl.get(:vivo,'/'))
+              expect(browser.url).to eq ("https://app-vivomusica.napster.com/login")
               browser.windows.last.close
             end
             it "sign in" do
