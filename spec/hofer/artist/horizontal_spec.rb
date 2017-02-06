@@ -16,6 +16,7 @@ describe "WEBCLIENT" do
               browser.iframe(:id, "horizontal-player").div(:class, "icon-napster").when_present.click
               browser.windows.last.use
               expect(browser.url).to eq (RhapsodyUrl.get(:ho,'/'))
+#              expect(browser.url).to eq (RhapsodyUrl.get(:appho))
               browser.windows.last.close
             end
             it "sign in" do

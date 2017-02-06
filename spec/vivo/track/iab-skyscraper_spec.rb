@@ -16,7 +16,7 @@ describe "WEBCLIENT" do
               browser.iframe(:id, "iab-skyscraper-player").div(:id, "logo-icon").when_present.click
               browser.windows.last.use
 #              expect(browser.url).to eq (RhapsodyUrl.get(:vivo,'/'))
-              expect(browser.url).to eq ("https://app-vivomusica.napster.com/login")
+              expect(browser.url).to eq (RhapsodyUrl.get(:appvivo,'/login'))
               browser.windows.last.close
             end
             it "sign in" do
