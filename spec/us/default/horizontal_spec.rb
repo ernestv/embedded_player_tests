@@ -2,10 +2,9 @@
 require 'rspec'
 require 'watir-webdriver'
 
-describe "WEBCLIENT" do
+describe "EMBEDDED PLAYER" do
   describe "US" do
   include_context "firefox browser"
-    describe "EMBEDDED PLAYER", :embedded do
       describe "- DEFAULT -" do
       
         describe "Horizontal player" do    
@@ -36,9 +35,9 @@ describe "WEBCLIENT" do
               browser.cookies.clear
               browser.goto RhapsodyUrl.get(:us, '/embedded-player/viewer.html')          
               browser.iframe(:id, "horizontal-player").li(:class, "header-share").when_present.click
-              sleep 1
-              browser.div(:class, "link-url")
-              expect(browser.text) .to include ("http://us.napster.com/")
+#              sleep 1
+#              browser.div(:class, "link-url")
+#              expect(browser.text) .to include ("http://us.napster.com/")
 #              expect(browser.text) .to include ("http://us.napster.com/embedded-player/index.html?t=1486377042288#")
               browser.iframe(:id, "horizontal-player").div(:class, "social-services").a(:id, "facebook-icon").when_present.click
               browser.windows.last.use
@@ -57,4 +56,4 @@ describe "WEBCLIENT" do
        end
      end
   end
-end
+

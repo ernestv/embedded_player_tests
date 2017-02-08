@@ -2,10 +2,9 @@
 require 'rspec'
 require 'watir-webdriver'
 
-describe "WEBCLIENT" do
+describe "EMBEDDED PLAYER" do
   describe "ALDI" do
   include_context "firefox browser"
-    describe "EMBEDDED PLAYER", :embedded do
       describe "- PLAYLIST -" do
       
         describe "Horizontal player" do    
@@ -106,7 +105,6 @@ describe "WEBCLIENT" do
               browser.iframe(:id, "square-player").div(:id, "logo").when_present.click
               browser.windows.last.use
               expect(browser.url).to eq (RhapsodyUrl.get(:al,'/'))
-#              expect(browser.url).to eq ("https://app.lifestore-flat.de/login/?goto=/&redirect=1")
               browser.windows.last.close
             end
             it "sign in" do
@@ -235,5 +233,5 @@ describe "WEBCLIENT" do
        end
      end
   end
-end
+
 

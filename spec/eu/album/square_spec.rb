@@ -2,10 +2,9 @@
 require 'rspec'
 require 'watir-webdriver'
 
-describe "WEBCLIENT" do
+describe "EMBEDDED PLAYER" do
   describe "EU" do
   include_context "firefox browser"
-    describe "EMBEDDED PLAYER", :embedded do
       describe "- ALBUM -" do
       
       describe "Square Player" do
@@ -54,4 +53,3 @@ describe "WEBCLIENT" do
        end
      end
   end
-end
