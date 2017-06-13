@@ -1,6 +1,7 @@
 shared_context "firefox browser" do
   let(:browser){ @browser }
   before(:all) {
+    Selenium::WebDriver::Firefox.path = "/Applications/Firefox4.app/Contents/MacOS/firefox"
     @browser = Watir::Browser.new :firefox
     @browser.window.resize_to(RSpec.configuration.browser_size[:width], RSpec.configuration.browser_size[:height])
   }
@@ -13,6 +14,7 @@ end
 shared_context "firefox browser for each example" do
   let(:browser){ @browser }
   before(:each) {
+    Selenium::WebDriver::Firefox.path = "/Applications/Firefox4.app/Contents/MacOS/firefox"
       @browser = Watir::Browser.new :firefox
       @browser.window.resize_to(RSpec.configuration.browser_size[:width], RSpec.configuration.browser_size[:height])
   }

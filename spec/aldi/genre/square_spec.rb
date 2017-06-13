@@ -37,6 +37,7 @@ describe "EMBEDDED PLAYER" do
               browser.goto RhapsodyUrl.get(:al, '/embedded-player/viewer.html')
               browser.div(:id, "content-types").radio(:value => 'genre').set
               browser.iframe(:id, "square-player").li(:class, "header-share").when_present.click
+              sleep 1
               browser.iframe(:id, "square-player").div(:class, "social-services").a(:id, "facebook-icon").when_present.click
               browser.windows.last.use
               expect(browser.url).to include ("https://www.facebook.com/")
