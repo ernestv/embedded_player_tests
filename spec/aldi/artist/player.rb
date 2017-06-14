@@ -46,7 +46,7 @@ describe "EMBEDDED PLAYER" do
               browser.windows.last.close
               browser.iframe(:id, "horizontal-player").div(:class, "social-services").a(:id, "googleplus-icon").when_present.click
               browser.windows.last.use
-              expect(browser.url).to include ("https://accounts.google.com/ServiceLogin")
+              expect(browser.url).to include ("https://accounts.google.com/")
               browser.windows.last.close
             end
           end
@@ -92,7 +92,7 @@ describe "EMBEDDED PLAYER" do
               browser.windows.last.close
               browser.iframe(:id, "track-player").div(:class, "social-services").a(:id, "googleplus-icon").when_present.click
               browser.windows.last.use
-              expect(browser.url).to include ("https://accounts.google.com/ServiceLogin")
+              expect(browser.url).to include ("https://accounts.google.com/")
               browser.windows.last.close
             end
           end
@@ -137,7 +137,7 @@ describe "EMBEDDED PLAYER" do
               browser.windows.last.close
               browser.iframe(:id, "square-player").div(:class, "social-services").a(:id, "googleplus-icon").when_present.click
               browser.windows.last.use
-              expect(browser.url).to include ("https://accounts.google.com/ServiceLogin")
+              expect(browser.url).to include ("https://accounts.google.com/")
               browser.windows.last.close
             end
           end

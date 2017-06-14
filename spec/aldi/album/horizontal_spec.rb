@@ -11,7 +11,9 @@ describe "EMBEDDED PLAYER" do
           it "logo" do
               browser.cookies.clear
               browser.goto RhapsodyUrl.get(:al, '/embedded-player/viewer.html')
+              sleep 10
               browser.div(:id, "content-types").radio(:value => 'album').set
+              sleep 10
               browser.iframe(:id, "horizontal-player").div(:id, "logo-icon").when_present.click
               browser.windows.last.use
               expect(browser.url).to eq (RhapsodyUrl.get(:al,'/'))
@@ -47,7 +49,7 @@ describe "EMBEDDED PLAYER" do
               browser.windows.last.close
               browser.iframe(:id, "horizontal-player").div(:class, "social-services").a(:id, "googleplus-icon").when_present.click
               browser.windows.last.use
-              expect(browser.url).to include ("https://accounts.google.com/ServiceLogin")
+              expect(browser.url).to include ("https://accounts.google.com/")
               browser.windows.last.close
             end
          end

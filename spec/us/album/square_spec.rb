@@ -45,7 +45,7 @@ describe "EMBEDDED PLAYER" do
               browser.windows.last.close
               browser.iframe(:id, "square-player").div(:class, "social-services").a(:id, "googleplus-icon").when_present.click
               browser.windows.last.use
-              expect(browser.url).to include ("https://accounts.google.com/ServiceLogin")
+              expect(browser.url).to include ("https://accounts.google.com/")
               browser.windows.last.close
             end
           end
